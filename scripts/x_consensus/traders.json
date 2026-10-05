@@ -1,0 +1,26 @@
+{
+  "_comment": "交易者權重設定。prior 是身分類別的保守起始值，不是實證戰績；實績乘數由 trader_scores 從我們自己抓到的揭露事件算出。改這裡就會改權重。",
+  "shrinkage_alpha": 10,
+  "forward_days": 30,
+  "category_priors": {
+    "politician": 0.70,
+    "institution": 0.60,
+    "insider": 0.50,
+    "executive": 0.40
+  },
+  "category_notes": {
+    "politician": "現任或卸任政治人物。有法定申報義務，資料可查核，但申報最長可延遲 45 天。",
+    "institution": "機構投資人與基金經理人。13F 有一季延遲，但部位規模大。",
+    "insider": "公司內部人（董事、高階經理人）。資訊優勢明確但只限單一公司。",
+    "executive": "企業領袖與名人。言論影響力通常大於其交易本身。"
+  },
+  "overrides": {
+    "trump-donald": {
+      "display_name": "Donald Trump",
+      "category": "politician",
+      "prior_weight": 1.0,
+      "weight_source": "user_directive",
+      "notes": "使用者指定為最高權重。這是使用者指令，不是本專案算出來的實證結論。"
+    }
+  }
+}

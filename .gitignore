@@ -1,2 +1,24 @@
 .DS_Store
-dashboard.html
+# Local generated output and source data
+/dashboard.html
+**/.data/
+**/.venv/
+**/out/
+**/data/
+**/__pycache__/
+*.py[cod]
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+*.log
+.env
+.env.*
+!.env.example
+# Authentication and local editor configuration
+**/auth.json
+**/credentials.json
+**/cookies.json
+**/storage-state*.json
+.idea/
+.vscode/

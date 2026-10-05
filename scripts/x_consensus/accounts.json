@@ -1,0 +1,119 @@
+{
+  "_comment": "account_type 決定共識計算是否納入。opinion=明確表態帳號（唯一投票的類別）；options_flow=選擇權流向；market_news=新聞轉述；trade_disclosure=交易揭露，餵交易者權重模型。後三類都不投票。",
+  "accounts": [
+    {
+      "handle": "aleabitoreddit",
+      "display_name": "Serenity",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "半導體、光通訊、AI 供應鏈"
+    },
+    {
+      "handle": "jukan05",
+      "display_name": "Jukan",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "韓國半導體與全球供應鏈"
+    },
+    {
+      "handle": "octopusycc",
+      "display_name": "大老师",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "先進製程、設備、亞洲科技供應鏈"
+    },
+    {
+      "handle": "zephyr_z9",
+      "display_name": "Zephyr",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "科技成長股、記憶體、半導體週期"
+    },
+    {
+      "handle": "KawzInvests",
+      "display_name": "KawzInvests",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "AI、科技成長股、產業催化劑"
+    },
+    {
+      "handle": "michaelsikand",
+      "display_name": "Michael Sikand",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "科技平台、AI 產品、新創趨勢"
+    },
+    {
+      "handle": "ren_stocks",
+      "display_name": "Ren",
+      "account_type": "opinion",
+      "counts_toward_consensus": true,
+      "focus": "成長股機會與估值風險"
+    },
+    {
+      "handle": "unusual_whales",
+      "display_name": "Unusual Whales",
+      "account_type": "options_flow",
+      "counts_toward_consensus": false,
+      "focus": "美股選擇權流向與異常市場活動"
+    },
+    {
+      "handle": "StockMKTNewz",
+      "display_name": "Evan",
+      "account_type": "market_news",
+      "counts_toward_consensus": false,
+      "focus": "美股公司新聞與市場催化劑"
+    },
+    {
+      "handle": "DJTRadar",
+      "display_name": "DJT Radar",
+      "account_type": "trade_disclosure",
+      "counts_toward_consensus": false,
+      "focus": "與 Trump 相關的公開交易揭露"
+    },
+    {
+      "handle": "InTheAssembly",
+      "display_name": "In The Assembly",
+      "account_type": "trade_disclosure",
+      "counts_toward_consensus": false,
+      "focus": "美國國會議員的公開申報交易"
+    },
+    {
+      "handle": "WhaleReceipts",
+      "display_name": "Whale Receipts",
+      "account_type": "trade_disclosure",
+      "counts_toward_consensus": false,
+      "focus": "公司內部人（SEC Form 4）買進申報"
+    },
+    {
+      "handle": "QuiverQuant",
+      "display_name": "Quiver Quantitative",
+      "account_type": "trade_disclosure",
+      "counts_toward_consensus": false,
+      "focus": "國會交易、遊說、政府合約等公部門資料"
+    },
+    {
+      "handle": "CapitolTrades",
+      "display_name": "Capitol Trades",
+      "account_type": "trade_disclosure",
+      "counts_toward_consensus": false,
+      "focus": "國會議員股票交易申報追蹤",
+      "enabled": false,
+      "disabled_reason": "2026-10-04 身份不符：X 個人頁為 Alice Love，非原設定的國會交易追蹤來源；保留資料，排除分析，不猜替代帳號。"
+    },
+    {
+      "handle": "KobeissiLetter",
+      "display_name": "The Kobeissi Letter",
+      "account_type": "market_news",
+      "counts_toward_consensus": false,
+      "focus": "總體經濟與市場快訊"
+    },
+    {
+      "handle": "WOLF_Financial",
+      "display_name": "Wolf Financial",
+      "account_type": "market_news",
+      "counts_toward_consensus": false,
+      "focus": "財報與盤中市場快訊"
+    }
+  ]
+}
