@@ -96,3 +96,27 @@ Homebrew 的 0.146.0 不相容於目前帳號的新模型，未修改或移除�
 價格來源自己的部分下載失敗仍須查 run.log，不能把寫入列數當成全行情更新。
 
 驗證：`python3 -m unittest discover -s tests -v`（30項），以及所有變更 shell 腳本的 `bash -n`。
+
+## 2026-10-07：價格與近期缺口修復
+
+`prices.py` 改為逐檔下載，逐一保存來源、調整方式、交易所時區、成功／失敗理由與回填數量。
+只接受已結束的交易日，當天價格需實際收盤再等待15分鐘；不使用盤中價格充當收盤。
+採 `auto_adjust=True`，價格舊值保存於 `price_revisions`，新值與來源保存於 `price_observations`。
+完整來源證據在 `data/prices/applied/<batch_id>/`，最近一次逐檔狀態在 `data/prices/last_status.json`。
+相同價格重播不改寫；來源回報限流即停止整輪，連續三檔連線失敗停止剩餘下載。
+部分缺資料以退出碼1回報，不能再把部分寫入當成全行情成功。快取超過5個日曆日不產生當期報酬。
+
+```sh
+# 使用既有正式 .venv／uv 環境，無需新增登入或 API 金鑰。
+python3 -m x_consensus.prices
+# 身分已確認後，只重試指定的標的。
+python3 -m x_consensus.prices --tickers US:META,STO:SIVE
+```
+
+`ticker_aliases.json` 僅補上已確認的 DISCO 公司名 → `TSE:6146`。
+沒有將錯寫的6416全域改成DISCO；原貼文、原模型答案及原版本保留。
+`fetch.sh` 開始時重用既有 `x consensus daily fetch` 工作空間，其餘固定截止日、限流與停滯規則不變。
+
+10/7修復仍有未完成的歷史全文判讀、代碼身分／行情缺口及 X 歷史搜尋停滯。
+進度快照與驗證見 [資料修復進度](../../reports/2026-10-07_資料修復進度.md)。
+私人網站仍是獨立手動快照；GitHub push 不會同步網站或更新 Mac 排程。

@@ -48,6 +48,8 @@ PYCONFIG
 import fs from 'node:fs'
 import path from 'node:path'
 
+await useOrCreateTaskSpace('x consensus daily fetch')
+
 const cfg = JSON.parse(fs.readFileSync(path.join(XC_HOME, 'accounts.json'), 'utf8'))
 const wantTypes = XC_TYPES ? XC_TYPES.split(',').map(x => x.trim()) : null
 const accounts = cfg.accounts
