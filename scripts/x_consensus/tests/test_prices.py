@@ -140,22 +140,25 @@ class PriceRepairTests(unittest.TestCase):
             self.assertEqual(n,0);self.assertEqual(missing,['US:META','US:AMD']);self.assertEqual(yf.Ticker.call_count,1)
 
     def test_spac_successor_does_not_supply_unverified_pre_merger_prices(self):
-        db=sqlite3.connect(':memory:');db.row_factory=sqlite3.Row
-        db.execute('CREATE TABLE prices(ticker_key TEXT,date TEXT,close REAL,PRIMARY KEY(ticker_key,date))')
-        yf=MagicMock()
-        yf.Ticker.return_value.history.return_value={'Close':Series([
-            (datetime(2026,5,7),10), (datetime(2026,5,11),12)])}
-        yf.Ticker.return_value.get_history_metadata.return_value={
-            'symbol':'BRUN','longName':'Boost Run Inc.','currency':'USD',
-            'exchangeTimezoneName':'America/New_York'}
-        with tempfile.TemporaryDirectory() as tmp, patch.object(prices,'DATA_DIR',Path(tmp)),patch.object(prices,'connect',return_value=db),patch.dict('sys.modules',{'yfinance':yf}),patch.object(prices,'time'):
-            n,missing=prices.fetch(keys=['US:WLAC'])
-            self.assertEqual(n,1);self.assertEqual(missing,[])
-            status=json.loads((Path(tmp)/'prices/last_status.json').read_text())
-            evidence=json.loads((Path(tmp)/'prices/applied'/status['batch_id']/'US_WLAC.json').read_text())
-            self.assertEqual(evidence['rows'],[['2026-05-11',12.0]])
-            self.assertEqual(evidence['ticker_key'],'US:WLAC')
-            self.assertEqual(evidence['provider_symbol'],'BRUN')
+        cases=[('US:WLAC','BRUN','Boost Run Inc.',datetime(2026,5,7),datetime(2026,5,11)),
+               ('US:XXI','XXI','Twenty One Capital, Inc.',datetime(2025,12,8),datetime(2025,12,9))]
+        for key,symbol,name,earlier,first in cases:
+            with self.subTest(key=key):
+                db=sqlite3.connect(':memory:');db.row_factory=sqlite3.Row
+                db.execute('CREATE TABLE prices(ticker_key TEXT,date TEXT,close REAL,PRIMARY KEY(ticker_key,date))')
+                yf=MagicMock()
+                yf.Ticker.return_value.history.return_value={'Close':Series([(earlier,10),(first,12)])}
+                yf.Ticker.return_value.get_history_metadata.return_value={
+                    'symbol':symbol,'longName':name,'currency':'USD',
+                    'exchangeTimezoneName':'America/New_York'}
+                with tempfile.TemporaryDirectory() as tmp, patch.object(prices,'DATA_DIR',Path(tmp)),patch.object(prices,'connect',return_value=db),patch.dict('sys.modules',{'yfinance':yf}),patch.object(prices,'time'):
+                    n,missing=prices.fetch(keys=[key])
+                    self.assertEqual(n,1);self.assertEqual(missing,[])
+                    status=json.loads((Path(tmp)/'prices/last_status.json').read_text())
+                    evidence=json.loads((Path(tmp)/'prices/applied'/status['batch_id']/(key.replace(':','_')+'.json')).read_text())
+                    self.assertEqual(evidence['rows'],[[first.date().isoformat(),12.0]])
+                    self.assertEqual(evidence['ticker_key'],key)
+                    self.assertEqual(evidence['provider_symbol'],symbol)
 
 
 if __name__=='__main__':unittest.main()

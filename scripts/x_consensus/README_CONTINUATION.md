@@ -193,3 +193,19 @@ Nasdaq官方確認SKHY為SK hynix美國存託股；明寫SKHY優先於公司名�
 已重讀的9筆僅有$SKHY的既有參照用逐篇override訂正；原方向、語氣、全文和分類不改。
 新SKHY行情要求公司名、USD，且只接受2026-07-10起的完成交易日。
 佐證：[Nasdaq SKHY](https://www.nasdaq.com/market-activity/stocks/skhy)。
+
+XXI的官方合併完成公告確認Class A於2025-12-09開始NYSE交易；行情guard核對
+Twenty One公司名及USD，只接受該日期以後完成日線，不拼入CEP合併前SPAC價格。
+佐證：[SEC原始公告](https://www.sec.gov/Archives/edgar/data/2070457/000121390025119445/ea026879401ex99-1_twenty.htm)。
+同篇歷史SEGA故事只說三十多年前協助Nvidia，未提2004年成立的SEGA SAMMY控股公司；
+逐篇override隔離母公司猜測，保留NVDA、原文與方向不明判讀。
+
+10/8台北05:20最後查核：既有有限程序已退出，原佇列鎖已釋放，沒有未完成模型批次。
+已入庫24,147篇；對初始備份新增7,578篇，其中7,563篇在原起點範圍內。
+已取得來源只剩5篇股別身分待確認，揭露與26小時觀點待辦為0；X連續歷史未證實完整。
+行情319,596列／933個快取鍵，需要936個；NSCL、OURA、TMHC仍無可用快取。
+AVB／EQR各1列舊價、QRVO過舊，以及PSKY／WBD未取得本次收盤新列另列限制。
+最後21篇SKHY完整來源審核追加18個精確ADS訂正，3個混合參照保留；
+8個較早override更新前的完整紀錄留在signal_identity_override_revisions，原訊號不改。
+每個原貼文、訊號、分類、揭露與交易者均保留；價格舊值另有完整修訂帳本。
+正式／程式副本各51項測試通過，最後覆蓋、保存與有限收集收據詳見進度報告。

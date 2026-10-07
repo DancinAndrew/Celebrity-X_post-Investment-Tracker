@@ -21,6 +21,9 @@ from .tickers import yfinance_symbol
 
 LOOKBACK_DAYS = 420
 SPECIAL_IDENTITIES = {
+    # SEC closing release: XXI Class A began NYSE trading on Dec 9, 2025.
+    # Do not inherit pre-combination CEP prices into Twenty One's series.
+    'US:XXI': ('twenty one', 'USD', '2025-12-09'),
     'US:SKHY': ('sk hynix', 'USD', '2026-07-10'),
     'US:PENG': ('penguin', 'USD', None),
     'US:SPCX': ('space exploration', 'USD', '2026-06-12'),
