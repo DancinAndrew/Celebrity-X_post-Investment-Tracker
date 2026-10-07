@@ -257,5 +257,21 @@
     "ams-OSRAM",
     "ams OSRAM",
     "ams-OSRAM AG"
+  ],
+  "SWX:ABBN": [
+    "ABBN",
+    "ABB Ltd"
+  ],
+  "SWX:KNIN": [
+    "KNIN",
+    "Kuehne+Nagel",
+    "Kuehne + Nagel",
+    "Kuehne Nagel",
+    "Kuehne & Nagel"
+  ],
+  "XETRA:P911": [
+    "P911",
+    "Porsche AG",
+    "Dr. Ing. h.c. F. Porsche AG"
   ]
 }

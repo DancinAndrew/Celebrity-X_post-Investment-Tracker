@@ -18,6 +18,24 @@ class Series:
 
 
 class PriceRepairTests(unittest.TestCase):
+    def test_porsche_ag_preferred_reference_is_not_the_holding_company(self):
+        self.assertEqual(tickers.resolve('P911', 'Porsche AG', None), 'XETRA:P911')
+        self.assertEqual(tickers.yfinance_symbol('XETRA:P911'), 'P911.DE')
+        self.assertIsNone(tickers.resolve('', 'Porsche Automobil Holding SE', None))
+        prices.check_identity('XETRA:P911', 'P911.DE', {'symbol': 'P911.DE', 'longName': 'Dr. Ing. h.c. F. Porsche AG', 'currency': 'EUR'})
+        with self.assertRaises(ValueError):
+            prices.check_identity('XETRA:P911', 'P911.DE', {'symbol': 'P911.DE', 'longName': 'Porsche Automobil Holding SE', 'currency': 'EUR'})
+
+    def test_verified_swiss_codes_keep_exchange_and_currency(self):
+        for code, company, name in [('ABBN', 'ABB Ltd', 'ABB Ltd'),
+                                     ('KNIN', 'Kuehne+Nagel', 'Kuehne + Nagel International AG')]:
+            key = 'SWX:' + code
+            self.assertEqual(tickers.resolve(code, company, None), key)
+            self.assertEqual(tickers.yfinance_symbol(key), code + '.SW')
+            prices.check_identity(key, code + '.SW', {'symbol': code + '.SW', 'longName': name, 'currency': 'CHF'})
+            with self.assertRaises(ValueError):
+                prices.check_identity(key, code + '.SW', {'symbol': code + '.SW', 'longName': name, 'currency': 'USD'})
+
     def test_wrong_numeric_market_shape_stays_unresolved(self):
         with patch.object(tickers, 'ALIASES', {}):
             for market in ['US', 'LSE', 'TWSE', 'TSE', 'TPEX', 'HKEX', 'UNKNOWN']:

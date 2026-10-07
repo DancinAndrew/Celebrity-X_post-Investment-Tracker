@@ -142,6 +142,33 @@ class AutoAnalysisTests(unittest.TestCase):
         self.assertNotIn('x_consensus.classify', calls)
         self.assertTrue((data / 'run.log').is_file())
 
+    def test_fetch_lock_protects_browser_and_releases_after_failure(self):
+        app = self.root / 'app'; app.mkdir()
+        bindir = self.root / 'bin'; bindir.mkdir()
+        for name in ('fetch.sh', 'lock.sh'):
+            shutil.copy2(auto.APP / name, app / name)
+        capture = self.root / 'browser-calls.txt'
+        ego = bindir / 'ego-browser'
+        ego.write_text('#!/bin/bash\ncat >/dev/null\nprintf "called\\n" >> "$CAPTURE"\nexit "${EGO_EXIT:-0}"\n')
+        ego.chmod(0o755)
+        data = self.root / 'data with spaces'
+        lock = data / 'locks/fetch'; lock.mkdir(parents=True)
+        env = {**os.environ, 'PATH': str(bindir) + os.pathsep + os.environ['PATH'],
+               'XC_DATA_DIR': str(data), 'CAPTURE': str(capture)}
+        (lock / 'pid').write_text(str(os.getpid()))
+        blocked = subprocess.run(['bash', str(app / 'fetch.sh')], env=env, capture_output=True, text=True)
+        self.assertEqual(blocked.returncode, 1)
+        self.assertFalse(capture.exists(), 'A competing collector must never enter the browser')
+        self.assertEqual((lock / 'pid').read_text(), str(os.getpid()))
+        (lock / 'pid').write_text('2147483647')  # A stale owner can be recovered.
+        finished = subprocess.run(['bash', str(app / 'fetch.sh')], env=env, capture_output=True, text=True)
+        self.assertEqual(finished.returncode, 0, finished.stderr)
+        self.assertFalse(lock.exists())
+        failed = subprocess.run(['bash', str(app / 'fetch.sh')], env={**env, 'EGO_EXIT': '7'}, capture_output=True, text=True)
+        self.assertEqual(failed.returncode, 7)
+        self.assertFalse(lock.exists(), 'Failed browser transport must release its own fetch lock')
+        self.assertEqual(capture.read_text().splitlines(), ['called', 'called'])
+
 
 if __name__ == '__main__':
     unittest.main()

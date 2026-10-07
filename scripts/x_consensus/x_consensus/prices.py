@@ -47,6 +47,9 @@ SPECIAL_IDENTITIES = {
     'TSXV:PNG': ('kraken', 'CAD', None),
     'SWX:NESN': ('nestl', 'CHF', None),
     'SWX:AMS': ('osram', 'CHF', None),
+    'SWX:ABBN': ('abb', 'CHF', None),
+    'SWX:KNIN': ('kuehne', 'CHF', None),
+    'XETRA:P911': ('porsche ag', 'EUR', None),
 }
 PROVIDER_ALIASES = {
     'US:BITF': {'symbol': 'KEEL', 'effective_date': '2026-04-06',

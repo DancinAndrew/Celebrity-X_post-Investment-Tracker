@@ -18,6 +18,7 @@ class ContinuationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); app=root/'app';app.mkdir()
             shutil.copy2(APP/'fetch.sh',app/'fetch.sh')
+            shutil.copy2(APP/'lock.sh',app/'lock.sh')
             target=root/'data with "quotes"'; bindir=root/'bin';bindir.mkdir()
             (bindir/'ego-browser').write_text('#!/bin/sh\ncat > "$CAPTURE"\n')
             (bindir/'ego-browser').chmod(0o755)

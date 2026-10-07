@@ -31,6 +31,13 @@ fi
 
 DATA="${XC_DATA_DIR:-$HERE/.data}"
 mkdir -p "$DATA/raw" "$DATA/runs"
+export XC_LOCK_DIR="$DATA/locks"
+source "$HERE/lock.sh"
+if ! acquire_lock fetch; then
+  echo "X 收集正由另一輪執行，本輪未抓取；既有資料與分頁保留。" >&2
+  exit 1
+fi
+trap 'release_lock fetch' EXIT
 
 {
   # Serialize shell inputs as JSON: spaces, quotes, and backslashes remain data.
