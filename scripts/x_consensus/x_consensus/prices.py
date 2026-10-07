@@ -31,6 +31,9 @@ SPECIAL_IDENTITIES = {
     # Keep only the verified post-combination BRUN sessions. Earlier WLAC
     # SPAC prices remain a separate historical gap, not invented continuity.
     'US:WLAC': ('boost run', 'USD', '2026-05-11'),
+    # Equity Residential is the renamed surviving issuer. Do not splice the
+    # merger target AVB into this series or invent earlier provider history.
+    'US:EQR': ('vivmark', 'USD', '2026-08-18'),
     'LSE:RPI': ('raspberry pi', 'GBp', None),
     'AMS:BESI': ('be semiconductor', 'EUR', None),
     'XETRA:IFX': ('infineon', 'EUR', None),
@@ -52,6 +55,10 @@ SPECIAL_IDENTITIES = {
     'XETRA:P911': ('porsche ag', 'EUR', None),
 }
 PROVIDER_ALIASES = {
+    'US:EQR': {'symbol': 'VMRK', 'effective_date': '2026-08-18',
+               'exchange_ratio': 'surviving issuer Equity Residential renamed Vivmark Residential; only post-merger sessions cached',
+               'evidence_url': 'https://investors.vivmarkresidential.com/news-events/press-releases/detail/113/vivmark-residential-launches-as-one-of-the-countrys-leading-real-estate-companies',
+               'history_limit': 'Only verified Vivmark sessions from 2026-08-18; earlier EQR history remains incomplete. AVB converted at 2.793 shares and is not mapped to this series'},
     'US:BITF': {'symbol': 'KEEL', 'effective_date': '2026-04-06',
                 'exchange_ratio': '1:1', 'evidence_url': 'https://investor.bitfarms.com/news-releases/news-release-details/bitfarms-officially-rebrands-keel-infrastructure-completes-us'},
     'US:SATS': {'symbol': 'ECHO', 'effective_date': '2026-06-24',

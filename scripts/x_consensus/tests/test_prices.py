@@ -18,6 +18,14 @@ class Series:
 
 
 class PriceRepairTests(unittest.TestCase):
+    def test_merger_target_cannot_use_the_surviving_issuer_price(self):
+        self.assertEqual(prices.PROVIDER_ALIASES['US:EQR']['symbol'], 'VMRK')
+        self.assertEqual(prices.SPECIAL_IDENTITIES['US:EQR'][2], '2026-08-18')
+        self.assertNotIn('US:AVB', prices.PROVIDER_ALIASES)
+        prices.check_identity('US:EQR', 'VMRK', {'symbol': 'VMRK', 'longName': 'Vivmark Residential', 'currency': 'USD'})
+        with self.assertRaises(ValueError):
+            prices.check_identity('US:EQR', 'VMRK', {'symbol': 'VMRK', 'longName': 'AvalonBay Communities, Inc.', 'currency': 'USD'})
+
     def test_porsche_ag_preferred_reference_is_not_the_holding_company(self):
         self.assertEqual(tickers.resolve('P911', 'Porsche AG', None), 'XETRA:P911')
         self.assertEqual(tickers.yfinance_symbol('XETRA:P911'), 'P911.DE')
