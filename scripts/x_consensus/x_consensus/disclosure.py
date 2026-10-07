@@ -271,6 +271,14 @@ def apply(only: str | None = None, version: str = VERSION) -> None:
                         import hashlib
                         literal = ' '.join(ev['trade_date_text'].split())
                         period += '-' + hashlib.sha256(literal.encode()).hexdigest()[:16]
+                    # A reported stock purchase and explicit call/put purchase
+                    # can share the same underlying and unknown date. Retain
+                    # both; use only the literal instrument in amount_text.
+                    # Missing option details do not invent a contract or date.
+                    amount = (ev.get('amount_text') or '').lower()
+                    instrument = re.search(r'\b(call|put)s?\s+(?:options?|contracts?|worth)\b', amount)
+                    if instrument:
+                        period += ':instrument-' + instrument.group(1)
                     identity = (trader_key, ticker, ev['direction'], period)
                     if identity in identities:
                         raise ValueError(f'Duplicate event identity: {post_id}/{identity}')

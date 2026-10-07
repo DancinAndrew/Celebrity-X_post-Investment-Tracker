@@ -21,6 +21,7 @@ from .tickers import yfinance_symbol
 
 LOOKBACK_DAYS = 420
 SPECIAL_IDENTITIES = {
+    'US:SKHY': ('sk hynix', 'USD', '2026-07-10'),
     'US:PENG': ('penguin', 'USD', None),
     'US:SPCX': ('space exploration', 'USD', '2026-06-12'),
     'STO:SIVE': ('sivers', 'SEK', None),

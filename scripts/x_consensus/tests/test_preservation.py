@@ -167,6 +167,28 @@ class PreservationTests(unittest.TestCase):
             self.apply([first, {**first, 'amount_text': 'different amount'}])
         self.assertEqual(self.snapshot(), before)
 
+    def test_stock_and_explicit_options_share_an_underlying_without_collapsing(self):
+        stock = {**self.event, 'trade_date': None, 'trade_date_text': 'just disclosed',
+                 'amount_text': '15,000 shares'}
+        call = {**stock, 'amount_text': 'calls worth up to $5 million'}
+        put = {**stock, 'amount_text': 'put options worth up to $500,000'}
+        before = self.snapshot()
+        self.apply([stock, call, put])
+        once = self.snapshot()
+        for table, rows in before.items():
+            self.assertTrue(set(rows) <= set(once[table]), table)
+        c = db.connect(self.path)
+        active = c.execute('SELECT * FROM active_disclosure_events').fetchall()
+        self.assertEqual(len(active), 3)
+        self.assertTrue(all(r['trade_date'] is None for r in active))
+        self.assertEqual({r['amount_text'] for r in active}, {e['amount_text'] for e in [stock, call, put]})
+        c.close()
+        self.apply([stock, call, put])
+        self.assertEqual(self.snapshot(), once)
+        with self.assertRaises(ValueError):
+            self.apply([stock, call, {**call, 'amount_text': 'call contracts worth $1 million'}])
+        self.assertEqual(self.snapshot(), once)
+
     def test_sive_quarantine_preserves_raw_signals_and_filters_both_read_paths(self):
         c = db.connect(self.path)
         for pid, version in [('1', 'claude-code-session/v1'), ('2', 'codex-session/v1')]:
@@ -184,6 +206,12 @@ class PreservationTests(unittest.TestCase):
     def test_numeric_market_requires_explicit_identity_context(self):
         self.assertIsNone(tickers.resolve('000660', None, None))
         self.assertIsNone(tickers.resolve('688017', None, None))
+        self.assertEqual(tickers.resolve('000660', 'SK hynix', 'KRX'), 'KRX:000660')
+
+    def test_explicit_skhy_ads_keeps_its_listing_despite_issuer_alias(self):
+        self.assertEqual(tickers.resolve('$SKHY', 'SK hynix', 'US'), 'US:SKHY')
+        self.assertEqual(tickers.resolve('SKHY', 'SK hynix', None), 'US:SKHY')
+        self.assertIsNone(tickers.resolve('SKHY', 'SK hynix', 'KRX'))
         self.assertEqual(tickers.resolve('000660', 'SK hynix', 'KRX'), 'KRX:000660')
 
     def test_opinion_replay_keeps_values_and_conflict_rolls_back(self):

@@ -67,6 +67,13 @@ def resolve(symbol_as_written: str, company_name: str | None, market_guess: str 
     """回傳 ticker_key；解不出來回 None（交給人工補別名，不亂猜）。"""
     token = (symbol_as_written or "").strip().lstrip("$").upper()
 
+    # Nasdaq's verified SKHY ADS is distinct from the Korean ordinary share.
+    # A generic issuer-name alias must not replace an explicitly written ADS
+    # ticker. Conflicting numeric-market guesses stay unresolved for review.
+    if token == 'SKHY':
+        supplied = (market_guess or '').upper()
+        return 'US:SKHY' if supplied in {'', 'US', 'NASDAQ', 'NYSE', 'AMEX'} else None
+
     if company_name:
         hit = ALIASES.get(company_name.strip().lower())
         if hit:
