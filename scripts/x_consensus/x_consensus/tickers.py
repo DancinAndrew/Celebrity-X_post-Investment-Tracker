@@ -30,7 +30,14 @@ MARKET_SUFFIX = {
     "SSE": ".SS", "SZSE": ".SZ",
     "TWSE": ".TW", "TSE": ".T", "HKEX": ".HK",
     "STO": ".ST", "LSE": ".L", "EPA": ".PA", "TSXV": ".V",
-    "XETRA": ".DE", "TPEX": ".TWO",
+    "XETRA": ".DE", "TPEX": ".TWO", "TADAWUL": ".SR", "AMS": ".AS", "HEL": ".HE",
+    "SWX": ".SW", "VI": ".VI",
+}
+NUMERIC_MARKET_SYMBOLS = {
+    'KRX': r'\d{6}', 'KOSDAQ': r'\d{6}', 'SSE': r'\d{6}',
+    'SZSE': r'\d{6}', 'TWSE': r'\d{4}', 'TPEX': r'\d{4}',
+    'HKEX': r'\d{4,5}', 'TADAWUL': r'\d{4}',
+    'TSE': r'(?:\d{4}|\d{3}[A-Z])',
 }
 
 # 六碼數字的市場，用開頭幾碼判斷。這個規則不完美但涵蓋絕大多數常見標的。
@@ -70,14 +77,25 @@ def resolve(symbol_as_written: str, company_name: str | None, market_guess: str 
     if not token:
         return None
 
+    # An explicit provider suffix carries its market; a conflicting supplied
+    # market remains unresolved. Never infer a market from bare digits.
+    for market, suffix in MARKET_SUFFIX.items():
+        if suffix and token.endswith(suffix.upper()):
+            supplied = (market_guess or '').upper()
+            if supplied in MARKET_SUFFIX and supplied != market:
+                return None
+            return resolve(token[:-len(suffix)], None, market)
+
     if token.isdigit():
+        if (market_guess or '').upper() == 'HKEX' and 1 <= len(token) <= 5:
+            return f'HKEX:{token.zfill(4)}'
         if len(token) == 6:
             market = (market_guess or "").upper()
-            if market not in MARKET_SUFFIX:
+            if market not in NUMERIC_MARKET_SYMBOLS or not re.fullmatch(NUMERIC_MARKET_SYMBOLS[market], token):
                 return None
-            return f"{market}:{token}" if market else None
+            return f"{market}:{token}"
         # 四碼：台股與日股都用四碼，靠 market_guess 區分
-        if len(token) == 4 and (market_guess or "").upper() in {"TWSE", "TPEX", "TSE", "HKEX"}:
+        if len(token) == 4 and (market_guess or "").upper() in {"TWSE", "TPEX", "TSE", "HKEX", "TADAWUL"}:
             return f"{market_guess.upper()}:{token}"
         return None
 
@@ -87,6 +105,8 @@ def resolve(symbol_as_written: str, company_name: str | None, market_guess: str 
 
     if re.fullmatch(r"[A-Z]{1,5}", token):
         market = (market_guess or "").upper()
+        if market in NUMERIC_MARKET_SYMBOLS:
+            return None
         if token == 'SIVE' and market != 'STO':
             return None
         if market in MARKET_SUFFIX:
@@ -102,6 +122,8 @@ def yfinance_symbol(ticker_key: str) -> str | None:
     if ":" not in ticker_key:
         return None
     market, symbol = ticker_key.split(":", 1)
+    if market in NUMERIC_MARKET_SYMBOLS and not re.fullmatch(NUMERIC_MARKET_SYMBOLS[market], symbol):
+        return None
     suffix = MARKET_SUFFIX.get(market)
     return None if suffix is None else f"{symbol}{suffix}"
 

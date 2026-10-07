@@ -24,6 +24,45 @@ SPECIAL_IDENTITIES = {
     'US:PENG': ('penguin', 'USD', None),
     'US:SPCX': ('space exploration', 'USD', '2026-06-12'),
     'STO:SIVE': ('sivers', 'SEK', None),
+    'US:BITF': ('keel', 'USD', None),
+    'US:SATS': ('echostar', 'USD', None),
+    'US:BRR': ('silvia', 'USD', None),
+    'US:VSCO': ('victoria', 'USD', None),
+    # Keep only the verified post-combination BRUN sessions. Earlier WLAC
+    # SPAC prices remain a separate historical gap, not invented continuity.
+    'US:WLAC': ('boost run', 'USD', '2026-05-11'),
+    'LSE:RPI': ('raspberry pi', 'GBp', None),
+    'AMS:BESI': ('be semiconductor', 'EUR', None),
+    'XETRA:IFX': ('infineon', 'EUR', None),
+    'XETRA:BMW': ('bayerische', 'EUR', None),
+    'XETRA:LPK': ('lpkf', 'EUR', None),
+    'XETRA:MBG': ('mercedes', 'EUR', None),
+    'XETRA:WAF': ('siltronic', 'EUR', None),
+    'EPA:KER': ('kering', 'EUR', None),
+    'EPA:MC': ('lvmh', 'EUR', None),
+    'EPA:RMS': ('herm', 'EUR', None),
+    'EPA:SOI': ('soitec', 'EUR', None),
+    'VI:ATS': ('austria', 'EUR', None),
+    'EPA:HO': ('thales', 'EUR', None),
+    'TSXV:PNG': ('kraken', 'CAD', None),
+    'SWX:NESN': ('nestl', 'CHF', None),
+    'SWX:AMS': ('osram', 'CHF', None),
+}
+PROVIDER_ALIASES = {
+    'US:BITF': {'symbol': 'KEEL', 'effective_date': '2026-04-06',
+                'exchange_ratio': '1:1', 'evidence_url': 'https://investor.bitfarms.com/news-releases/news-release-details/bitfarms-officially-rebrands-keel-infrastructure-completes-us'},
+    'US:SATS': {'symbol': 'ECHO', 'effective_date': '2026-06-24',
+                'exchange_ratio': 'unchanged share capital and CUSIP', 'evidence_url': 'https://ir.echostar.com/news-releases/news-release-details/echostar-changing-stocker-ticker-sats-echo-marking-companys-next'},
+    'US:BRR': {'symbol': 'SVIA', 'effective_date': '2026-09-22',
+                'exchange_ratio': 'unchanged rights; existing certificates remain valid', 'evidence_url': 'https://investors.cfosilvia.com/news-releases/news-release-details/silvia-inc-begins-trading-nasdaq-under-new-ticker-svia'},
+    'US:VSCO': {'symbol': 'VSXY', 'effective_date': '2026-06-02',
+                'exchange_ratio': 'unchanged common stock and CUSIP; no shareholder action',
+                'evidence_url': 'https://victoriassecret.gcs-web.com/news-releases/news-release-details/victorias-secret-co-change-ticker-symbol-vsxy-marking-next'},
+    'US:WLAC': {'symbol': 'BRUN', 'effective_date': '2026-05-11',
+                'exchange_ratio': 'one WLAC Class A share converted into one Boost Run Class A share at May 8 closing',
+                'evidence_url': 'https://investors.boostrun.com/news-releases/news-release-details/boost-run-brun-begins-trading-nasdaq-940-million-contracted',
+                'continuity_evidence_url': 'https://www.sec.gov/Archives/edgar/data/2090646/000149315226031923/forms-1.htm',
+                'history_limit': 'Only verified post-combination sessions from 2026-05-11 are cached; earlier SPAC prices are not supplied by this mapping'},
 }
 
 
@@ -149,7 +188,7 @@ def fetch(limit: int | None = None, keys: list[str] | None = None) -> tuple[int,
     consecutive_network_failures = 0
     for index, key in enumerate(tickers):
         result = {'ticker_key': key, 'state': 'missing', 'attempts': 0}
-        symbol = yfinance_symbol(key)
+        symbol = PROVIDER_ALIASES.get(key, {}).get('symbol') or yfinance_symbol(key)
         result['provider_symbol'] = symbol
         if not symbol or key == 'US:SIVE':
             result.update(state='blocked_identity', reason='unverified_or_unsupported_market')
@@ -178,7 +217,7 @@ def fetch(limit: int | None = None, keys: list[str] | None = None) -> tuple[int,
                         raise ValueError('no_completed_daily_bars')
                     fetched = datetime.now(timezone.utc).isoformat()
                     meta = {k:metadata.get(k) for k in ('symbol','longName','shortName','currency','exchangeName','exchangeTimezoneName','instrumentType','firstTradeDate','regularMarketTime','currentTradingPeriod')}
-                    evidence = {'ticker_key':key,'provider_symbol':symbol,'fetched_at_utc':fetched,'start':start,'end_exclusive':end,'adjustment':'auto_adjust=True','metadata':meta,'rows':rows}
+                    evidence = {'ticker_key':key,'provider_symbol':symbol,'provider_alias':PROVIDER_ALIASES.get(key),'fetched_at_utc':fetched,'start':start,'end_exclusive':end,'adjustment':'auto_adjust=True','metadata':meta,'rows':rows}
                     (archive / (key.replace(':','_') + '.json')).write_text(json.dumps(evidence,ensure_ascii=False,indent=2,default=lambda value:value.isoformat())+'\n')
                     before = conn.execute('SELECT MAX(date) FROM prices WHERE ticker_key=?', (key,)).fetchone()[0]
                     inserted, revised, unchanged = persist_rows(conn,key,symbol,rows,metadata,batch_id,fetched)

@@ -263,28 +263,36 @@ def apply(only: str | None = None, version: str = VERSION) -> None:
                     if not ticker:
                         raise ValueError(f'Unresolved ticker: {post_id}/{ev["symbol_as_written"]}')
                     trader_key = slugify(ev['trader_name'])
-                    identity = (trader_key, ticker, ev['direction'], ev.get('trade_date'))
+                    # An unknown exact date can still have a distinct source
+                    # period ("in two days" versus "back in mid-May"). Keep
+                    # the literal period, without inventing a calendar date.
+                    period = ev.get('trade_date') or 'unknown'
+                    if period == 'unknown' and ev.get('trade_date_text'):
+                        import hashlib
+                        literal = ' '.join(ev['trade_date_text'].split())
+                        period += '-' + hashlib.sha256(literal.encode()).hexdigest()[:16]
+                    identity = (trader_key, ticker, ev['direction'], period)
                     if identity in identities:
                         raise ValueError(f'Duplicate event identity: {post_id}/{identity}')
                     identities.add(identity)
                     fields = (trader_key, ticker, ev['direction'], times[post_id], ev.get('amount_text'),
                               float(ev.get('confidence', .7)), ev.get('trade_date'), ev.get('trade_date_text'))
-                    prepared.append((ev, fields))
+                    prepared.append((ev, fields, period))
                 previous = conn.execute('SELECT signal_count FROM post_classifications WHERE post_id=? AND classifier_version=?',
                                         (post_id, version)).fetchone()
                 if previous:
                     existing = [tuple(r) for r in conn.execute(f'SELECT {columns} FROM disclosure_events WHERE post_id=? AND extractor_version=?',
                                                                (post_id, version))]
-                    if sorted(existing, key=repr) != sorted([fields for _, fields in prepared], key=repr):
+                    if sorted(existing, key=repr) != sorted([fields for _, fields, _ in prepared], key=repr):
                         raise ValueError(f'Conflicting answer for existing version: {post_id}/{version}')
                     replayed += 1
                     continue
-                for ev, fields in prepared:
+                for ev, fields, period in prepared:
                     trader_key, ticker, direction = fields[:3]
                     if not conn.execute('SELECT 1 FROM traders WHERE trader_key=?', (trader_key,)).fetchone():
                         upsert_trader(conn, trader_key, ev['trader_name'], ev['category'], cfg)
                     # Version and transaction date prevent overwriting another extraction.
-                    event_id = f'{post_id}:{trader_key}:{ticker}:{direction}:{version}:{ev.get("trade_date") or "unknown"}'
+                    event_id = f'{post_id}:{trader_key}:{ticker}:{direction}:{version}:{period}'
                     conn.execute('''INSERT INTO disclosure_events
                         (event_id,post_id,trader_key,ticker_key,direction,disclosed_at,amount_text,confidence,
                          extractor_version,extracted_at,trade_date,trade_date_text)

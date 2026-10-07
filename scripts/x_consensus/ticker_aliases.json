@@ -2,5 +2,260 @@
   "TSE:6146": [
     "Disco",
     "Disco Corporation"
+  ],
+  "US:BRK-B": [
+    "BRK.B",
+    "BRK-B"
+  ],
+  "TADAWUL:2222": [
+    "Saudi Aramco",
+    "Saudi Arabian Oil Company",
+    "Saudi Arabian Oil Co"
+  ],
+  "KRX:000660": [
+    "SK hynix",
+    "SK Hynix Inc."
+  ],
+  "TSE:285A": [
+    "Kioxia",
+    "Kioxia Holdings",
+    "Kioxia Holdings Corporation"
+  ],
+  "US:TSM": [
+    "TSM"
+  ],
+  "LSE:STAN": [
+    "Standard Chartered",
+    "Standard Chartered PLC",
+    "渣打银行",
+    "渣打銀行"
+  ],
+  "US:AVGO": [
+    "AVGO.O",
+    "Broadcom",
+    "Broadcom Inc."
+  ],
+  "TPEX:6173": [
+    "信昌電子陶瓷",
+    "信昌電",
+    "Prosperity Dielectrics",
+    "Prosperity Dielectrics Co., Ltd."
+  ],
+  "TPEX:6182": [
+    "Wafer Works",
+    "Wafer Works Corporation",
+    "Wafer Works（合晶）",
+    "合晶"
+  ],
+  "TPEX:3105": [
+    "WIN Semiconductors",
+    "WIN Semiconductors Corporation",
+    "WIN Semiconductor Corp.",
+    "穩懋半導體",
+    "穩懋"
+  ],
+  "TPEX:6488": [
+    "GlobalWafers",
+    "GlobalWafers Co., Ltd.",
+    "GlobalWafers（環球晶）",
+    "環球晶",
+    "環球晶圓"
+  ],
+  "TSE:6525": [
+    "Kokusai Electric",
+    "Kokusai Electric Corporation"
+  ],
+  "TPEX:4991": [
+    "Global Communication Semiconductors",
+    "GCS Holdings",
+    "GCS Holdings, Inc.",
+    "環宇",
+    "環宇-KY"
+  ],
+  "TPEX:3363": [
+    "上詮光纖通信股份有限公司",
+    "上詮",
+    "上詮光纖通信",
+    "FOCI Fiber Optic Communications"
+  ],
+  "TPEX:3374": [
+    "精材科技股份有限公司",
+    "精材",
+    "精材科技",
+    "Xintec Inc."
+  ],
+  "TPEX:6510": [
+    "中華精測科技股份有限公司",
+    "精測",
+    "Chunghwa Precision Test",
+    "Chunghwa Precision Test Tech. Co., Ltd.",
+    "中華精測科技"
+  ],
+  "TPEX:8147": [
+    "正淩精密工業股份有限公司",
+    "正淩",
+    "正淩精密工業",
+    "Nextronics",
+    "Nextronics Engineering"
+  ],
+  "TPEX:8358": [
+    "金居開發股份有限公司",
+    "金居",
+    "Co-Tech Development",
+    "Co-Tech Development（金居）",
+    "Co-Tech Development（鈺邦以外之銅箔廠金居）",
+    "金居開發"
+  ],
+  "TWSE:5285": [
+    "界霖科技股份有限公司",
+    "界霖",
+    "Jih Lin Technology",
+    "Jih Lin Technology（界霖）"
+  ],
+  "TSE:8035": [
+    "Tokyo Electron",
+    "Tokyo Electron Ltd.",
+    "Tokyo Electron Limited"
+  ],
+  "US:SCHW": [
+    "Charles Schwab",
+    "Charles Schwab Corporation"
+  ],
+  "US:AXTI": [
+    "AXT",
+    "AXT Inc.",
+    "AXT Incorporated"
+  ],
+  "AMS:BESI": [
+    "Besi",
+    "BE Semiconductor Industries",
+    "BE Semiconductor Industries N.V."
+  ],
+  "XETRA:IFX": [
+    "Infineon",
+    "Infineon Technologies",
+    "Infineon Technologies AG"
+  ],
+  "XETRA:BMW": [
+    "BMW",
+    "BMW AG",
+    "Bayerische Motoren Werke AG",
+    "Bayerische Motoren Werke"
+  ],
+  "TWSE:6515": [
+    "Winway",
+    "WinWay Technology",
+    "WinWay Technology Co., Ltd.",
+    "穎崴",
+    "精測以外的穎崴科技"
+  ],
+  "TPEX:5425": [
+    "台灣半導體股份有限公司",
+    "台半",
+    "台灣半導體"
+  ],
+  "SZSE:002371": [
+    "NAURA Technology",
+    "Naura Technology Group",
+    "北方華創"
+  ],
+  "SSE:688012": [
+    "AMEC",
+    "Advanced Micro-Fabrication Equipment",
+    "Advanced Micro-Fabrication Equipment Inc. China",
+    "中微公司"
+  ],
+  "LSE:RPI": [
+    "Raspberry Pi",
+    "Raspberry Pi Holdings",
+    "Raspberry Pi Holdings plc"
+  ],
+  "TPEX:3221": [
+    "台灣嘉碩科技股份有限公司",
+    "台嘉碩",
+    "台嘉碩"
+  ],
+  "HEL:WRT1V": [
+    "Wärtsilä",
+    "Wartsila",
+    "Wärtsilä Oyj Abp"
+  ],
+  "TPEX:1815": [
+    "富喬工業股份有限公司",
+    "富喬",
+    "富喬工業",
+    "Fulltech Fiber Glass",
+    "Fuchiao"
+  ],
+  "TPEX:5289": [
+    "宜鼎國際股份有限公司",
+    "宜鼎",
+    "Innodisk"
+  ],
+  "TPEX:6274": [
+    "台燿科技股份有限公司",
+    "台燿"
+  ],
+  "TPEX:6548": [
+    "長華科技股份有限公司",
+    "長科*",
+    "CWTC",
+    "Chang Wah Technology"
+  ],
+  "TPEX:6727": [
+    "亞泰金屬工業股份有限公司",
+    "亞泰金屬"
+  ],
+  "STO:SIVE": [
+    "Sivers Semiconductors",
+    "Sivers Semiconductors AB"
+  ],
+  "XETRA:LPK": [
+    "LPKF",
+    "LPKF Laser & Electronics"
+  ],
+  "XETRA:MBG": [
+    "Mercedes-Benz",
+    "Mercedes-Benz Group"
+  ],
+  "XETRA:WAF": [
+    "Siltronic",
+    "Siltronic AG"
+  ],
+  "EPA:KER": [
+    "Kering"
+  ],
+  "EPA:MC": [
+    "LVMH"
+  ],
+  "EPA:RMS": [
+    "Hermès",
+    "Hermes International"
+  ],
+  "EPA:SOI": [
+    "Soitec"
+  ],
+  "VI:ATS": [
+    "AT&S",
+    "AT & S Austria Technologie & Systemtechnik"
+  ],
+  "EPA:HO": [
+    "Thales",
+    "Thales SA"
+  ],
+  "TSXV:PNG": [
+    "Kraken Robotics",
+    "Kraken Robotics Inc."
+  ],
+  "SWX:NESN": [
+    "Nestlé",
+    "Nestlé S.A.",
+    "Nestle",
+    "Nestle SA"
+  ],
+  "SWX:AMS": [
+    "ams-OSRAM",
+    "ams OSRAM",
+    "ams-OSRAM AG"
   ]
 }

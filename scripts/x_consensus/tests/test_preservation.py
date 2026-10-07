@@ -146,6 +146,27 @@ class PreservationTests(unittest.TestCase):
         self.apply([self.event, second])
         self.assertEqual(self.snapshot(), once)
 
+    def test_distinct_unknown_source_periods_are_kept_without_guessed_dates(self):
+        first = {**self.event, 'trade_date': None, 'trade_date_text': 'in two days'}
+        second = {**first, 'trade_date_text': 'back in mid-May', 'amount_text': 'another chunk'}
+        self.apply([first, second])
+        once = self.snapshot()
+        c = db.connect(self.path)
+        rows = c.execute('SELECT trade_date,trade_date_text FROM active_disclosure_events').fetchall()
+        self.assertEqual(len(rows), 2)
+        self.assertTrue(all(r['trade_date'] is None for r in rows))
+        self.assertEqual({r['trade_date_text'] for r in rows}, {'in two days', 'back in mid-May'})
+        c.close()
+        self.apply([first, second])
+        self.assertEqual(self.snapshot(), once)
+
+    def test_duplicate_unknown_period_is_still_rejected_atomically(self):
+        first = {**self.event, 'trade_date': None, 'trade_date_text': 'in two days'}
+        before = self.snapshot()
+        with self.assertRaises(ValueError):
+            self.apply([first, {**first, 'amount_text': 'different amount'}])
+        self.assertEqual(self.snapshot(), before)
+
     def test_sive_quarantine_preserves_raw_signals_and_filters_both_read_paths(self):
         c = db.connect(self.path)
         for pid, version in [('1', 'claude-code-session/v1'), ('2', 'codex-session/v1')]:
