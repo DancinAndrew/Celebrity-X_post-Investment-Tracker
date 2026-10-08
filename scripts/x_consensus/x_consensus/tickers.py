@@ -74,6 +74,11 @@ def resolve(symbol_as_written: str, company_name: str | None, market_guess: str 
         supplied = (market_guess or '').upper()
         return 'US:SKHY' if supplied in {'', 'US', 'NASDAQ', 'NYSE', 'AMEX'} else None
 
+    # The reviewed Samsung disclosure writes A005930. Its ordinary share is
+    # KRX 005930; retain the explicit market and reject conflicting listings.
+    if token == 'A005930':
+        return 'KRX:005930' if (market_guess or '').upper() == 'KRX' else None
+
     if company_name:
         hit = ALIASES.get(company_name.strip().lower())
         if hit:

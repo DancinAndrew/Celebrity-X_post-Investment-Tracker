@@ -233,6 +233,31 @@ class PreservationTests(unittest.TestCase):
                 handoff.apply('codex-session/v1',str(self.answer))
             self.assertEqual(self.snapshot(),first)
 
+    def test_reviewed_samsung_code_import_preserves_source_and_rejects_market_conflict(self):
+        item = {'post_id':'1','is_list_or_market_wide':False,'signals':[
+            {'symbol_as_written':'A005930','company_name':'Samsung Electronics','market_guess':'KRX',
+             'stance':'unclear','tone':'neutral','confidence':.99,
+             'reason_zh':'Preliminary results without an author stock stance.',
+             'evidence_quote':'Stock Code: A005930'}]}
+        self.answer.write_text(json.dumps([item]))
+        before=self.snapshot()
+        with patch.object(handoff,'connect',side_effect=lambda: db.connect(self.path)):
+            handoff.apply('codex-session/v1',str(self.answer))
+            once=self.snapshot()
+            self.assertEqual(once['raw_posts'],before['raw_posts'])
+            c=db.connect(self.path)
+            row=c.execute('SELECT ticker_key,stance,tone,evidence_quote FROM signals').fetchone()
+            self.assertEqual(tuple(row),('KRX:005930','unclear','neutral','Stock Code: A005930'))
+            c.close()
+            handoff.apply('codex-session/v1',str(self.answer))
+            self.assertEqual(self.snapshot(),once)
+            for market in ['US','LSE','KOSDAQ',None]:
+                item['signals'][0]['market_guess']=market
+                self.answer.write_text(json.dumps([item]))
+                with self.assertRaises(ValueError):
+                    handoff.apply('codex-session/v1-r1',str(self.answer))
+                self.assertEqual(self.snapshot(),once)
+
 
 if __name__ == '__main__':
     unittest.main()
