@@ -1,0 +1,957 @@
+{
+  "schema_version": 2,
+  "data_as_of_utc": "2026-10-08T02:41:36.772004+00:00",
+  "site_snapshot_exported_at_utc": "2026-10-08T02:47:20.995212+00:00",
+  "dashboard_generated_at_utc": "2026-10-08T02:41:36.751710+00:00",
+  "last_fetch_completed_at_utc": "2026-10-08T02:27:12.766Z",
+  "latest_post_at_utc": "2026-10-08T01:52:43+00:00",
+  "fetch_run_ids": [
+    "2026-10-08T02-23-34-984Z"
+  ],
+  "fetch_scope": "latest completed receipt per enabled account; overlapping snapshots are not unique posts",
+  "report_window_hours": 26,
+  "source_dashboard_sha256": "1bab67095953a989fac8b05511682e58f105e8119c97265f3037e79f8162cc8f",
+  "new_posts": 7642,
+  "total_posts": 24211,
+  "snapshot_fetched_posts": 321,
+  "active_accounts": 15,
+  "accounts": [
+    {
+      "handle": "DJTRadar",
+      "status": "ok",
+      "tweets": 21,
+      "oldest": "2026-10-03T12:21:00.000Z",
+      "newest": "2026-10-07T20:06:41.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "InTheAssembly",
+      "status": "ok",
+      "tweets": 20,
+      "oldest": "2026-10-05T05:44:58.000Z",
+      "newest": "2026-10-07T20:01:39.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "KawzInvests",
+      "status": "ok",
+      "tweets": 23,
+      "oldest": "2026-09-30T20:36:23.000Z",
+      "newest": "2026-10-07T19:28:31.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "KobeissiLetter",
+      "status": "ok",
+      "tweets": 19,
+      "oldest": "2026-10-06T14:14:39.000Z",
+      "newest": "2026-10-07T23:31:38.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "QuiverQuant",
+      "status": "ok",
+      "tweets": 25,
+      "oldest": "2026-09-25T14:08:52.000Z",
+      "newest": "2026-10-07T18:02:37.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "StockMKTNewz",
+      "status": "ok",
+      "tweets": 19,
+      "oldest": "2026-10-07T14:06:29.000Z",
+      "newest": "2026-10-07T21:28:11.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "WOLF_Financial",
+      "status": "ok",
+      "tweets": 19,
+      "oldest": "2026-10-06T19:06:28.000Z",
+      "newest": "2026-10-07T23:41:42.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "WhaleReceipts",
+      "status": "ok",
+      "tweets": 21,
+      "oldest": "2026-09-23T15:24:53.000Z",
+      "newest": "2026-10-07T20:11:38.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "aleabitoreddit",
+      "status": "ok",
+      "tweets": 17,
+      "oldest": "2026-09-22T13:36:39.000Z",
+      "newest": "2026-10-05T16:20:16.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "jukan05",
+      "status": "ok",
+      "tweets": 23,
+      "oldest": "2026-10-05T14:25:06.000Z",
+      "newest": "2026-10-08T01:52:43.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "michaelsikand",
+      "status": "ok",
+      "tweets": 24,
+      "oldest": "2026-10-03T20:48:19.000Z",
+      "newest": "2026-10-08T01:04:14.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "octopusycc",
+      "status": "ok",
+      "tweets": 19,
+      "oldest": "2026-10-06T01:26:25.000Z",
+      "newest": "2026-10-07T11:19:18.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "ren_stocks",
+      "status": "ok",
+      "tweets": 12,
+      "oldest": "2026-10-06T20:56:42.000Z",
+      "newest": "2026-10-07T22:36:24.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "unusual_whales",
+      "status": "ok",
+      "tweets": 39,
+      "oldest": "2026-10-07T11:37:00.000Z",
+      "newest": "2026-10-08T01:39:16.000Z",
+      "stop_reason": "cutoff"
+    },
+    {
+      "handle": "zephyr_z9",
+      "status": "ok",
+      "tweets": 20,
+      "oldest": "2026-10-02T23:05:53.000Z",
+      "newest": "2026-10-08T01:22:37.000Z",
+      "stop_reason": "cutoff"
+    }
+  ],
+  "pending_opinion_posts": 0,
+  "stance_classification": {
+    "state": "partial",
+    "version": "codex-session/v1",
+    "model": null,
+    "posts": 17539,
+    "finished_at_utc": "2026-10-08T02:35:22.159172+00:00"
+  },
+  "disclosure_classification": {
+    "state": "applied",
+    "version": "codex-session/disc-v2",
+    "model": null,
+    "posts": 5383,
+    "finished_at_utc": "2026-10-08T02:35:22.178545+00:00"
+  },
+  "price_download_failures": 3,
+  "price_keys_without_cache": [
+    "US:NSCL",
+    "US:OURA",
+    "US:TMHC"
+  ],
+  "price_cached_symbols": 933,
+  "price_required_symbols": 936,
+  "price_rows": 319684,
+  "price_last_refresh_completed_at_utc": "2026-10-08T00:16:12.662723+00:00",
+  "price_last_refresh_state": "partial",
+  "price_last_refresh_missing_keys": [
+    "US:EQR",
+    "US:NSCL",
+    "US:OURA",
+    "US:TMHC"
+  ],
+  "analysis_methods": [
+    "Codex CLI",
+    "Codex session full-text review"
+  ],
+  "price_cache_fewer_than_two_bars": [
+    {
+      "ticker_key": "US:AVB",
+      "daily_bars": 1,
+      "first_completed_bar": "2026-08-14",
+      "latest_completed_bar": "2026-08-14"
+    },
+    {
+      "ticker_key": "US:EQR",
+      "daily_bars": 1,
+      "first_completed_bar": "2026-08-17",
+      "latest_completed_bar": "2026-08-17"
+    }
+  ],
+  "price_calendar_age_over_5_days": [
+    "SSE:600183",
+    "SSE:600460",
+    "SSE:601012",
+    "SSE:601727",
+    "SSE:601869",
+    "SSE:603019",
+    "SSE:603290",
+    "SSE:603296",
+    "SSE:603799",
+    "SSE:603986",
+    "SSE:688008",
+    "SSE:688012",
+    "SSE:688018",
+    "SSE:688072",
+    "SSE:688099",
+    "SSE:688234",
+    "SSE:688249",
+    "SSE:688256",
+    "SSE:688396",
+    "SSE:688521",
+    "SSE:688608",
+    "SSE:688630",
+    "SSE:688795",
+    "SSE:688825",
+    "SZSE:000636",
+    "SZSE:000977",
+    "SZSE:000988",
+    "SZSE:002008",
+    "SZSE:002371",
+    "SZSE:002384",
+    "SZSE:002428",
+    "SZSE:002463",
+    "SZSE:002475",
+    "SZSE:300308",
+    "SZSE:300327",
+    "SZSE:300408",
+    "SZSE:300476",
+    "SZSE:300502",
+    "SZSE:300750",
+    "SZSE:300757",
+    "SZSE:301269",
+    "US:AVB",
+    "US:EQR",
+    "US:QRVO"
+  ],
+  "price_calendar_age_note": "Calendar age does not prove missed sessions. SSE is closed 2026-10-01 through 2026-10-07; September 30 is its latest completed session.",
+  "historical_cutoff_utc": "2025-09-13T15:18:29.918+00:00",
+  "pending_stance_history": 5,
+  "pending_disclosure_history": 0,
+  "historical_coverage": [
+    {
+      "handle": "CapitolTrades",
+      "account_type": "trade_disclosure",
+      "enabled": 0,
+      "posts": 1,
+      "observed_oldest": "2015-03-13T16:05:22+00:00",
+      "observed_latest": "2015-03-13T16:05:22+00:00",
+      "unique_nonretweet_scope_posts": 0,
+      "pending_scope": 0,
+      "observed_month_counts": {},
+      "baseline_posts": 1,
+      "new_database_posts": 0,
+      "new_unique_nonretweet_posts": 0,
+      "new_unique_in_scope": 0,
+      "new_unique_in_scope_classified": 0,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": null
+    },
+    {
+      "handle": "DJTRadar",
+      "account_type": "trade_disclosure",
+      "enabled": 1,
+      "posts": 321,
+      "observed_oldest": "2026-07-03T12:48:54+00:00",
+      "observed_latest": "2026-10-07T20:06:41+00:00",
+      "unique_nonretweet_scope_posts": 321,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2026-07": 83,
+        "2026-08": 107,
+        "2026-09": 100,
+        "2026-10": 31
+      },
+      "baseline_posts": 315,
+      "new_database_posts": 6,
+      "new_unique_nonretweet_posts": 6,
+      "new_unique_in_scope": 6,
+      "new_unique_in_scope_classified": 6,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-08-03T13:50:13+00:00"
+    },
+    {
+      "handle": "InTheAssembly",
+      "account_type": "trade_disclosure",
+      "enabled": 1,
+      "posts": 887,
+      "observed_oldest": "2026-03-30T08:45:28+00:00",
+      "observed_latest": "2026-10-07T20:01:39+00:00",
+      "unique_nonretweet_scope_posts": 885,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2026-03": 3,
+        "2026-04": 47,
+        "2026-05": 152,
+        "2026-06": 194,
+        "2026-07": 160,
+        "2026-08": 149,
+        "2026-09": 142,
+        "2026-10": 38
+      },
+      "baseline_posts": 878,
+      "new_database_posts": 9,
+      "new_unique_nonretweet_posts": 9,
+      "new_unique_in_scope": 9,
+      "new_unique_in_scope_classified": 9,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-06-09T07:07:06+00:00"
+    },
+    {
+      "handle": "KawzInvests",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 649,
+      "observed_oldest": "2025-07-15T18:37:11+00:00",
+      "observed_latest": "2026-10-07T19:28:31+00:00",
+      "unique_nonretweet_scope_posts": 631,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-09": 1,
+        "2025-10": 41,
+        "2025-11": 29,
+        "2025-12": 16,
+        "2026-01": 21,
+        "2026-02": 43,
+        "2026-03": 62,
+        "2026-04": 51,
+        "2026-05": 57,
+        "2026-06": 66,
+        "2026-07": 75,
+        "2026-08": 74,
+        "2026-09": 75,
+        "2026-10": 20
+      },
+      "baseline_posts": 639,
+      "new_database_posts": 10,
+      "new_unique_nonretweet_posts": 10,
+      "new_unique_in_scope": 5,
+      "new_unique_in_scope_classified": 5,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2025-07-15T18:37:11+00:00"
+    },
+    {
+      "handle": "KobeissiLetter",
+      "account_type": "market_news",
+      "enabled": 1,
+      "posts": 2344,
+      "observed_oldest": "2026-01-10T17:30:00+00:00",
+      "observed_latest": "2026-10-07T23:31:38+00:00",
+      "unique_nonretweet_scope_posts": 2343,
+      "pending_scope": 1,
+      "observed_month_counts": {
+        "2026-04": 151,
+        "2026-05": 480,
+        "2026-06": 460,
+        "2026-07": 378,
+        "2026-08": 368,
+        "2026-09": 427,
+        "2026-10": 79
+      },
+      "baseline_posts": 389,
+      "new_database_posts": 1955,
+      "new_unique_nonretweet_posts": 1955,
+      "new_unique_in_scope": 1955,
+      "new_unique_in_scope_classified": 1954,
+      "new_unique_in_scope_pending": 1,
+      "new_unique_oldest_utc": "2026-04-22T15:20:00+00:00"
+    },
+    {
+      "handle": "QuiverQuant",
+      "account_type": "trade_disclosure",
+      "enabled": 1,
+      "posts": 1345,
+      "observed_oldest": "2022-12-07T18:35:30+00:00",
+      "observed_latest": "2026-10-07T18:02:37+00:00",
+      "unique_nonretweet_scope_posts": 1332,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-09": 48,
+        "2025-10": 103,
+        "2025-11": 112,
+        "2025-12": 107,
+        "2026-01": 151,
+        "2026-02": 133,
+        "2026-03": 136,
+        "2026-04": 126,
+        "2026-05": 98,
+        "2026-06": 70,
+        "2026-07": 73,
+        "2026-08": 82,
+        "2026-09": 77,
+        "2026-10": 16
+      },
+      "baseline_posts": 1337,
+      "new_database_posts": 8,
+      "new_unique_nonretweet_posts": 8,
+      "new_unique_in_scope": 8,
+      "new_unique_in_scope_classified": 8,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-08-03T14:30:45+00:00"
+    },
+    {
+      "handle": "StockMKTNewz",
+      "account_type": "market_news",
+      "enabled": 1,
+      "posts": 2362,
+      "observed_oldest": "2026-07-16T20:48:16+00:00",
+      "observed_latest": "2026-10-07T21:28:11+00:00",
+      "unique_nonretweet_scope_posts": 2357,
+      "pending_scope": 2,
+      "observed_month_counts": {
+        "2026-07": 390,
+        "2026-08": 827,
+        "2026-09": 957,
+        "2026-10": 183
+      },
+      "baseline_posts": 776,
+      "new_database_posts": 1586,
+      "new_unique_nonretweet_posts": 1586,
+      "new_unique_in_scope": 1586,
+      "new_unique_in_scope_classified": 1584,
+      "new_unique_in_scope_pending": 2,
+      "new_unique_oldest_utc": "2026-07-16T20:48:16+00:00"
+    },
+    {
+      "handle": "WOLF_Financial",
+      "account_type": "market_news",
+      "enabled": 1,
+      "posts": 2337,
+      "observed_oldest": "2026-06-26T11:45:54+00:00",
+      "observed_latest": "2026-10-07T23:41:42+00:00",
+      "unique_nonretweet_scope_posts": 2331,
+      "pending_scope": 2,
+      "observed_month_counts": {
+        "2026-06": 64,
+        "2026-07": 729,
+        "2026-08": 682,
+        "2026-09": 734,
+        "2026-10": 122
+      },
+      "baseline_posts": 577,
+      "new_database_posts": 1760,
+      "new_unique_nonretweet_posts": 1760,
+      "new_unique_in_scope": 1760,
+      "new_unique_in_scope_classified": 1758,
+      "new_unique_in_scope_pending": 2,
+      "new_unique_oldest_utc": "2026-06-26T11:45:54+00:00"
+    },
+    {
+      "handle": "WhaleReceipts",
+      "account_type": "trade_disclosure",
+      "enabled": 1,
+      "posts": 251,
+      "observed_oldest": "2025-12-04T09:09:02+00:00",
+      "observed_latest": "2026-10-07T20:11:38+00:00",
+      "unique_nonretweet_scope_posts": 251,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-12": 11,
+        "2026-01": 3,
+        "2026-02": 6,
+        "2026-06": 29,
+        "2026-07": 82,
+        "2026-08": 55,
+        "2026-09": 59,
+        "2026-10": 6
+      },
+      "baseline_posts": 249,
+      "new_database_posts": 2,
+      "new_unique_nonretweet_posts": 2,
+      "new_unique_in_scope": 2,
+      "new_unique_in_scope_classified": 2,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-08-03T15:37:29+00:00"
+    },
+    {
+      "handle": "aleabitoreddit",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 1644,
+      "observed_oldest": "2025-07-21T08:10:50+00:00",
+      "observed_latest": "2026-10-05T16:20:16+00:00",
+      "unique_nonretweet_scope_posts": 1634,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-09": 16,
+        "2025-10": 9,
+        "2025-11": 15,
+        "2025-12": 42,
+        "2026-01": 77,
+        "2026-02": 131,
+        "2026-03": 247,
+        "2026-04": 241,
+        "2026-05": 266,
+        "2026-06": 215,
+        "2026-07": 142,
+        "2026-08": 128,
+        "2026-09": 102,
+        "2026-10": 3
+      },
+      "baseline_posts": 1603,
+      "new_database_posts": 41,
+      "new_unique_nonretweet_posts": 41,
+      "new_unique_in_scope": 31,
+      "new_unique_in_scope_classified": 31,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2025-07-21T08:10:50+00:00"
+    },
+    {
+      "handle": "jukan05",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 2646,
+      "observed_oldest": "2025-01-25T02:21:38+00:00",
+      "observed_latest": "2026-10-08T01:52:43+00:00",
+      "unique_nonretweet_scope_posts": 2644,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2026-03": 219,
+        "2026-04": 566,
+        "2026-05": 380,
+        "2026-06": 407,
+        "2026-07": 439,
+        "2026-08": 337,
+        "2026-09": 241,
+        "2026-10": 55
+      },
+      "baseline_posts": 2643,
+      "new_database_posts": 3,
+      "new_unique_nonretweet_posts": 3,
+      "new_unique_in_scope": 3,
+      "new_unique_in_scope_classified": 3,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-10-07T22:59:21+00:00"
+    },
+    {
+      "handle": "michaelsikand",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 1269,
+      "observed_oldest": "2025-08-18T21:32:01+00:00",
+      "observed_latest": "2026-10-08T01:04:14+00:00",
+      "unique_nonretweet_scope_posts": 1248,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-09": 7,
+        "2025-10": 60,
+        "2025-11": 41,
+        "2025-12": 31,
+        "2026-01": 49,
+        "2026-02": 56,
+        "2026-03": 122,
+        "2026-04": 138,
+        "2026-05": 109,
+        "2026-06": 128,
+        "2026-07": 150,
+        "2026-08": 130,
+        "2026-09": 186,
+        "2026-10": 41
+      },
+      "baseline_posts": 1262,
+      "new_database_posts": 7,
+      "new_unique_nonretweet_posts": 7,
+      "new_unique_in_scope": 7,
+      "new_unique_in_scope_classified": 7,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-10-07T13:15:00+00:00"
+    },
+    {
+      "handle": "octopusycc",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 2178,
+      "observed_oldest": "2024-04-09T18:49:06+00:00",
+      "observed_latest": "2026-10-07T11:19:18+00:00",
+      "unique_nonretweet_scope_posts": 2175,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-09": 37,
+        "2025-10": 275,
+        "2025-11": 265,
+        "2025-12": 116,
+        "2026-01": 53,
+        "2026-02": 47,
+        "2026-03": 65,
+        "2026-04": 83,
+        "2026-05": 249,
+        "2026-06": 422,
+        "2026-07": 209,
+        "2026-08": 175,
+        "2026-09": 150,
+        "2026-10": 29
+      },
+      "baseline_posts": 2175,
+      "new_database_posts": 3,
+      "new_unique_nonretweet_posts": 3,
+      "new_unique_in_scope": 3,
+      "new_unique_in_scope_classified": 3,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-08-03T13:11:43+00:00"
+    },
+    {
+      "handle": "ren_stocks",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 665,
+      "observed_oldest": "2026-05-15T04:38:44+00:00",
+      "observed_latest": "2026-10-07T22:36:24+00:00",
+      "unique_nonretweet_scope_posts": 664,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2026-05": 1,
+        "2026-06": 3,
+        "2026-07": 225,
+        "2026-08": 204,
+        "2026-09": 184,
+        "2026-10": 47
+      },
+      "baseline_posts": 658,
+      "new_database_posts": 7,
+      "new_unique_nonretweet_posts": 7,
+      "new_unique_in_scope": 7,
+      "new_unique_in_scope_classified": 7,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-10-07T14:37:21+00:00"
+    },
+    {
+      "handle": "unusual_whales",
+      "account_type": "options_flow",
+      "enabled": 1,
+      "posts": 3123,
+      "observed_oldest": "2026-05-15T16:33:57+00:00",
+      "observed_latest": "2026-10-08T01:39:16+00:00",
+      "unique_nonretweet_scope_posts": 3120,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2026-05": 1,
+        "2026-07": 266,
+        "2026-08": 1193,
+        "2026-09": 1327,
+        "2026-10": 333
+      },
+      "baseline_posts": 883,
+      "new_database_posts": 2240,
+      "new_unique_nonretweet_posts": 2240,
+      "new_unique_in_scope": 2240,
+      "new_unique_in_scope_classified": 2240,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-05-15T16:33:57+00:00"
+    },
+    {
+      "handle": "zephyr_z9",
+      "account_type": "opinion",
+      "enabled": 1,
+      "posts": 2189,
+      "observed_oldest": "2025-06-02T18:32:02+00:00",
+      "observed_latest": "2026-10-08T01:22:37+00:00",
+      "unique_nonretweet_scope_posts": 2188,
+      "pending_scope": 0,
+      "observed_month_counts": {
+        "2025-10": 2,
+        "2025-11": 1,
+        "2025-12": 4,
+        "2026-01": 2,
+        "2026-02": 4,
+        "2026-03": 116,
+        "2026-04": 462,
+        "2026-05": 353,
+        "2026-06": 394,
+        "2026-07": 342,
+        "2026-08": 268,
+        "2026-09": 213,
+        "2026-10": 27
+      },
+      "baseline_posts": 2184,
+      "new_database_posts": 5,
+      "new_unique_nonretweet_posts": 5,
+      "new_unique_in_scope": 5,
+      "new_unique_in_scope_classified": 5,
+      "new_unique_in_scope_pending": 0,
+      "new_unique_oldest_utc": "2026-08-03T15:20:43+00:00"
+    }
+  ],
+  "historical_new_unique_by_account": [
+    {
+      "handle": "DJTRadar",
+      "new_unique_posts": 6,
+      "new_unique_in_scope": 6,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T13-39-08-543Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2026-07-03T12:48:54.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": "2026-07-03T12:48:54.000Z",
+      "ingest_receipt_delta_posts": 3,
+      "ingest_receipt_delta_in_scope": 3
+    },
+    {
+      "handle": "WhaleReceipts",
+      "new_unique_posts": 2,
+      "new_unique_in_scope": 2,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T14-31-20-636Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2025-12-04T09:09:02.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": "2025-12-04T09:09:02.000Z",
+      "ingest_receipt_delta_posts": 1,
+      "ingest_receipt_delta_in_scope": 1
+    },
+    {
+      "handle": "InTheAssembly",
+      "new_unique_posts": 9,
+      "new_unique_in_scope": 9,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T14-35-19-479Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-07-04T07:33:43.000Z"
+        },
+        {
+          "run_id": "2026-10-07T19-11-15-410Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2026-03-30T08:45:28.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": "2026-03-30T08:45:28.000Z",
+      "ingest_receipt_delta_posts": 8,
+      "ingest_receipt_delta_in_scope": 8
+    },
+    {
+      "handle": "KawzInvests",
+      "new_unique_posts": 10,
+      "new_unique_in_scope": 5,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T14-44-18-306Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-03-27T02:06:49.000Z"
+        },
+        {
+          "run_id": "2026-10-07T19-19-31-875Z",
+          "status": "ok",
+          "stop_reason": "cutoff",
+          "oldest_returned_at_utc": "2025-07-15T18:37:11.000Z"
+        }
+      ],
+      "status": "ok",
+      "stop_reason": "cutoff",
+      "oldest_returned_at_utc": "2025-07-15T18:37:11.000Z",
+      "ingest_receipt_delta_posts": 8,
+      "ingest_receipt_delta_in_scope": 3
+    },
+    {
+      "handle": "michaelsikand",
+      "new_unique_posts": 7,
+      "new_unique_in_scope": 7,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T14-52-42-301Z",
+          "status": "failed",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": null
+        }
+      ],
+      "status": "failed",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": null,
+      "ingest_receipt_delta_posts": 0,
+      "ingest_receipt_delta_in_scope": 0
+    },
+    {
+      "handle": "QuiverQuant",
+      "new_unique_posts": 8,
+      "new_unique_in_scope": 8,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T15-00-19-693Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2026-03-12T13:02:29.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": "2026-03-12T13:02:29.000Z",
+      "ingest_receipt_delta_posts": 5,
+      "ingest_receipt_delta_in_scope": 5
+    },
+    {
+      "handle": "octopusycc",
+      "new_unique_posts": 3,
+      "new_unique_in_scope": 3,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T15-11-21-704Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2026-06-30T13:44:43.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "stagnant",
+      "oldest_returned_at_utc": "2026-06-30T13:44:43.000Z",
+      "ingest_receipt_delta_posts": 3,
+      "ingest_receipt_delta_in_scope": 3
+    },
+    {
+      "handle": "aleabitoreddit",
+      "new_unique_posts": 41,
+      "new_unique_in_scope": 31,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T15-20-45-651Z",
+          "status": "ok",
+          "stop_reason": "cutoff",
+          "oldest_returned_at_utc": "2025-09-08T16:43:54.000Z"
+        }
+      ],
+      "status": "ok",
+      "stop_reason": "cutoff",
+      "oldest_returned_at_utc": "2025-09-08T16:43:54.000Z",
+      "ingest_receipt_delta_posts": 41,
+      "ingest_receipt_delta_in_scope": 31
+    },
+    {
+      "handle": "zephyr_z9",
+      "new_unique_posts": 5,
+      "new_unique_in_scope": 5,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T16-04-03-528Z",
+          "status": "partial",
+          "stop_reason": "stagnant",
+          "oldest_returned_at_utc": "2026-06-13T03:11:53.000Z"
+        },
+        {
+          "run_id": "2026-10-07T19-26-27-244Z",
+          "status": "failed",
+          "stop_reason": "invalid_response",
+          "oldest_returned_at_utc": null
+        }
+      ],
+      "status": "failed",
+      "stop_reason": "invalid_response",
+      "oldest_returned_at_utc": null,
+      "ingest_receipt_delta_posts": 3,
+      "ingest_receipt_delta_in_scope": 3
+    },
+    {
+      "handle": "WOLF_Financial",
+      "new_unique_posts": 1760,
+      "new_unique_in_scope": 1760,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T16-26-12-856Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-06-26T11:45:54.000Z"
+        },
+        {
+          "run_id": "2026-10-07T20-50-13-924Z",
+          "status": "failed",
+          "stop_reason": "invalid_response",
+          "oldest_returned_at_utc": null
+        }
+      ],
+      "status": "failed",
+      "stop_reason": "invalid_response",
+      "oldest_returned_at_utc": null,
+      "ingest_receipt_delta_posts": 1754,
+      "ingest_receipt_delta_in_scope": 1754
+    },
+    {
+      "handle": "StockMKTNewz",
+      "new_unique_posts": 1586,
+      "new_unique_in_scope": 1586,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T17-06-48-268Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-07-22T15:04:39.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "max_scrolls",
+      "oldest_returned_at_utc": "2026-07-22T15:04:39.000Z",
+      "ingest_receipt_delta_posts": 1575,
+      "ingest_receipt_delta_in_scope": 1575
+    },
+    {
+      "handle": "KobeissiLetter",
+      "new_unique_posts": 1955,
+      "new_unique_in_scope": 1955,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T17-51-59-646Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-04-22T15:20:00.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "max_scrolls",
+      "oldest_returned_at_utc": "2026-04-22T15:20:00.000Z",
+      "ingest_receipt_delta_posts": 1536,
+      "ingest_receipt_delta_in_scope": 1536
+    },
+    {
+      "handle": "unusual_whales",
+      "new_unique_posts": 2240,
+      "new_unique_in_scope": 2240,
+      "attempts": [
+        {
+          "run_id": "2026-10-07T18-33-25-591Z",
+          "status": "partial",
+          "stop_reason": "max_scrolls",
+          "oldest_returned_at_utc": "2026-07-25T15:01:00.000Z"
+        }
+      ],
+      "status": "partial",
+      "stop_reason": "max_scrolls",
+      "oldest_returned_at_utc": "2026-07-25T15:01:00.000Z",
+      "ingest_receipt_delta_posts": 2226,
+      "ingest_receipt_delta_in_scope": 2226
+    }
+  ],
+  "historical_delta_basis": "post_id difference against the initial database backup; includes supported archived sources ingested by the existing daily run before the history wrapper",
+  "cloud_auto_sync_enabled": false,
+  "collection_location": "Mac",
+  "schedule_timezone": "Asia/Taipei",
+  "schedule_hours": [
+    2,
+    8,
+    14,
+    20
+  ],
+  "stale_after_hours": 7,
+  "historical_coverage_complete": false,
+  "classifier_human_evaluation_complete": false,
+  "pipeline_state": "partial"
+}

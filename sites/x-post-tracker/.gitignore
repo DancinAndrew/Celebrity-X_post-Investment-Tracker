@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+*.tar.gz
+*.tgz
+.env
+.env.*
+.DS_Store

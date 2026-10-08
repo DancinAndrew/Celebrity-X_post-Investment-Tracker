@@ -1,0 +1,120 @@
+---
+title: X 觀點共識 2026-10-07
+created: 2026-10-07
+tags:
+  - project/finance
+  - type/report
+---
+
+# X 觀點共識 · 2026-10-07
+
+> 產出時間：2026-10-07 22:41 美東時間 · 窗口 26 小時 · 174 篇貼文 · 分類器 `session/v1`
+
+> [!warning] 這是公開資訊彙整，不是投資建議。所有立場標籤都是模型推斷，會錯。
+
+> 最新入庫貼文（UTC）：2026-10-08T01:52:43+00:00；窗口內尚未判讀觀點：0 篇。
+> 歷史回補尚未完成，空白或未分類不可解讀為中立。分類器尚未通過人工評測。
+
+> 固定候選全文回填 · 揭露/選擇權：636／636 篇已判讀，0 篇待判讀；8 篇含 8 個待確認股票參照。
+> 候選完成不代表全部歷史已取得或分類，待確認身分不進個股投票。
+
+> 固定候選全文回填 · 觀點：5,239／5,239 篇已判讀，0 篇待判讀；1,086 篇含 2,329 個待確認股票參照。
+> 候選完成不代表全部歷史已取得或分類，待確認身分不進個股投票。
+
+## 明確共同看多
+
+_至少 2 個意見帳號明確看多，且無人看空_
+
+- **US:MRVL** — KawzInvests（看多）、Evan（僅提及）、Jukan（僅提及）、Michael Sikand（看多）
+- **US:LITE** — KawzInvests（看多）、Michael Sikand（看多）、Ren（僅提及）
+- **US:AAOI** — KawzInvests（看多）、Michael Sikand（看多）
+- **US:AEHR** — KawzInvests（看多）、Michael Sikand（看多）
+- **US:ALAB** — KawzInvests（看多）、Michael Sikand（看多）
+- **US:CIEN** — KawzInvests（看多）、Michael Sikand（看多）
+- **US:COHR** — KawzInvests（看多）、Michael Sikand（看多）
+- **US:TSEM** — KawzInvests（看多）、Michael Sikand（看多）
+
+## 明確共同看空
+
+_至少 2 個意見帳號明確看空，且無人看多_
+
+（今天沒有）
+
+## 多空分歧
+
+_同一檔同時有帳號看多與看空_
+
+（今天沒有）
+
+## 今日提及（無明確共識）
+
+- **US:AVGO** — The Kobeissi Letter（僅提及）、Evan（僅提及）、Wolf Financial（僅提及）、Jukan（僅提及）、Unusual Whales（僅提及）
+- **US:MU** — Evan（僅提及）、Jukan（僅提及）、大老师（僅提及）、Ren（看多）、Zephyr（僅提及）
+- **US:BULL** — In The Assembly（僅提及）、Evan（僅提及）、Wolf Financial（僅提及）、Unusual Whales（僅提及）
+- **KRX:005930** — Evan（僅提及）、Jukan（僅提及）、Ren（僅提及）
+- **US:NVDA** — Evan（僅提及）、Wolf Financial（僅提及）、Jukan（僅提及）
+- **US:ORCL** — The Kobeissi Letter（僅提及）、Wolf Financial（僅提及）、Unusual Whales（僅提及）
+- **US:SNDK** — In The Assembly（僅提及）、Quiver Quantitative（僅提及）、Ren（看多）
+- **US:AMD** — Evan（僅提及）、Jukan（僅提及）
+- **US:APO** — The Kobeissi Letter（僅提及）、Wolf Financial（僅提及）
+- **US:BX** — The Kobeissi Letter（僅提及）、Wolf Financial（僅提及）
+- **US:TSLA** — Michael Sikand（僅提及）、Unusual Whales（僅提及）
+- **US:VST** — DJT Radar（僅提及）、In The Assembly（僅提及）
+- **US:WOLF** — Evan（僅提及）、Ren（看多）
+- **LSE:STAN** — 大老师（僅提及）
+- **TWSE:2408** — Jukan（僅提及）
+- **US:AMZN** — Evan（僅提及）
+- **US:ASML** — Zephyr（看多）
+- **US:BABA** — Unusual Whales（僅提及）
+- **US:BE** — Unusual Whales（僅提及）
+- **US:BEN** — 大老师（僅提及）
+- **US:BWXT** — Wolf Financial（僅提及）
+- **US:CBRS** — In The Assembly（僅提及）
+- **US:COST** — Evan（僅提及）
+- **US:CRCL** — 大老师（僅提及）
+- **US:CRWV** — Evan（僅提及）
+- **US:DIS** — Evan（僅提及）
+- **US:GD** — Wolf Financial（僅提及）
+- **US:GOOGL** — Evan（僅提及）
+- **US:GRAB** — In The Assembly（僅提及）
+- **US:GS** — Wolf Financial（僅提及）
+- **US:HII** — Wolf Financial（僅提及）
+- **US:HOOD** — Evan（僅提及）
+- **US:ICE** — 大老师（僅提及）
+- **US:INTC** — Jukan（僅提及）
+- **US:LULU** — Evan（僅提及）
+- **US:MA** — 大老师（僅提及）
+- **US:MSFT** — Evan（僅提及）
+- **US:NBIS** — Ren（看多）
+- **US:NKE** — 大老师（僅提及）
+- **US:PENG** — Michael Sikand（看多）
+- …另有 9 檔
+
+## 語氣訊號（不計入共識）
+
+_多個意見帳號用同一種語氣談同一檔，但都沒有明確表態。嘲諷產品不等於看空股票，所以不投票；但整天沒人提到它也是資訊損失，所以列出來。_
+
+- **US:MU** · 偏負面 · 2 個帳號 — Jukan（貼文報導美光台灣工會因獎金爭議取得罷工授權，消息偏負面，但沒有作者自身的看空判斷。）、Ren（作者希望 MU 築底，未明確表達買進或方向預測。）
+
+## 抓取健康度
+
+_失敗的帳號代表資料缺失，不代表該帳號今天沒發文。_
+
+| 帳號 | 狀態 | 貼文 | 最新一篇 | 備註 |
+|---|---|---|---|---|
+| Capitol Trades | ⛔ excluded | 1 | 2015-03-13 16:05 | 2026-10-04 身份不符：X 個人頁為 Alice Love，非原設定的國會交易追蹤來源；保留資料，排除分析，不猜替代帳號。 |
+| DJT Radar | ✅ ok | 21 | 2026-10-07 20:06 | stop=cutoff |
+| In The Assembly | ✅ ok | 20 | 2026-10-07 20:01 | stop=cutoff |
+| KawzInvests | ✅ ok | 23 | 2026-10-07 19:28 | stop=cutoff |
+| The Kobeissi Letter | ✅ ok | 19 | 2026-10-07 23:31 | stop=cutoff |
+| Quiver Quantitative | ✅ ok | 25 | 2026-10-07 18:02 | stop=cutoff |
+| Evan | ✅ ok | 19 | 2026-10-07 21:28 | stop=cutoff |
+| Wolf Financial | ✅ ok | 19 | 2026-10-07 23:41 | stop=cutoff |
+| Whale Receipts | ✅ ok | 21 | 2026-10-07 20:11 | stop=cutoff |
+| Serenity | ✅ ok | 17 | 2026-10-05 16:20 | stop=cutoff |
+| Jukan | ✅ ok | 23 | 2026-10-08 01:52 | stop=cutoff |
+| Michael Sikand | ✅ ok | 24 | 2026-10-08 01:04 | stop=cutoff |
+| 大老师 | ✅ ok | 19 | 2026-10-07 11:19 | stop=cutoff |
+| Ren | ✅ ok | 12 | 2026-10-07 22:36 | stop=cutoff |
+| Unusual Whales | ✅ ok | 39 | 2026-10-08 01:39 | stop=cutoff |
+| Zephyr | ✅ ok | 20 | 2026-10-08 01:22 | stop=cutoff |
